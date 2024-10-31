@@ -4,10 +4,15 @@
 async function main() {
   // This is where the code you're actually experimenting with goes.
 
-  const prompt = "Please enter your name, or 'Exit' to quit: ";
+  let myBoolean = false; // Boolean types are true or false (1/0 yes/no on/off).
+  let myNumber = 3.14; // Number types are decimal numbers (or integers).
+  let myString = "Hello, world!"; // String types are text (strings).
   
-  let name = await input(prompt);
-  output(name);
+  output(myNumber);
+  output("3.14");
+
+  output(myNumber == "3.14"); // Using equivalency will upcast or downcast types to be the same prior to comparing.
+  output(myNumber === "3.14"); // Using identity will automatically assume they are not the same if they are different types.
 
 
 }
