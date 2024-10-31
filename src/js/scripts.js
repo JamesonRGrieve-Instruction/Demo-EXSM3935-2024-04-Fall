@@ -14,5 +14,5 @@ async function main() {
   output(myNumber == "3.14"); // Using equivalency will upcast or downcast types to be the same prior to comparing.
   output(myNumber === "3.14"); // Using identity will automatically assume they are not the same if they are different types.
 
-
+  output(`"'3.14 + 12'"`);
 }
