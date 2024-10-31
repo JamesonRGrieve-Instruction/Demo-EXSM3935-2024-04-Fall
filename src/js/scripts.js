@@ -5,10 +5,9 @@ async function main() {
   // This is where the code you're actually experimenting with goes.
 
   const prompt = "Please enter your name, or 'Exit' to quit: ";
+  
   let name = await input(prompt);
+  output(name);
 
-  while (name !== "Exit") {
-    output("Hello, " + name + "!");
-    name = await input(prompt);
-  }
+
 }
