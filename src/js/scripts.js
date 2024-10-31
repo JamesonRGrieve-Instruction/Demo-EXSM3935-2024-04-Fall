@@ -15,4 +15,20 @@ async function main() {
   output(myNumber === "3.14"); // Using identity will automatically assume they are not the same if they are different types.
 
   output(`${myNumber} + 12`); // String interpolation only works with backticks.
+
+  output("--- Arithmetic Operators ---");
+  output(`${myNumber} + 12 = ${myNumber + 12}`);
+  output(`${myNumber} - 12 = ${myNumber - 12}`);
+  output(`${myNumber} * 12 = ${myNumber * 12}`);
+  output(`${myNumber} / 12 = ${myNumber / 12}`);
+  output(`12 % ${myNumber.toFixed(0)} = ${12 % myNumber.toFixed(0)}`);
+
+  /*
+  1/3 + 2/3 = 3/3 = 1
+  0.3333... + 0.6666... = 0.9999... = 1
+  */
+
+  output(`0.1 + 0.2 = ${(0.1 + 0.2).toFixed(6)}`);
+  // Floating point rounding errors occur when adding some numbers using floating point arithmetic (the common number type in JavaScript).
+  // Keep this in mind when dealing with large or precise numbers such as financials or astrophysics.
 }
