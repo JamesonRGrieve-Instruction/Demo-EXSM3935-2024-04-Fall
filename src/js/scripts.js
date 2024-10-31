@@ -31,4 +31,27 @@ async function main() {
   output(`0.1 + 0.2 = ${(0.1 + 0.2).toFixed(6)}`);
   // Floating point rounding errors occur when adding some numbers using floating point arithmetic (the common number type in JavaScript).
   // Keep this in mind when dealing with large or precise numbers such as financials or astrophysics.
+
+  output("--- Relational Operators ---");
+
+  output(`${myNumber} > 3.14 = ${myNumber > 3.14}`);
+  output(`${myNumber} < 3.14 = ${myNumber < 3.14}`);
+  output(`${myNumber} >= 3.14 = ${myNumber >= 3.14}`);
+  output(`${myNumber} <= 3.14 = ${myNumber <= 3.14}`);
+  output(`${myNumber} == 3.14 = ${myNumber == 3.14}`);
+  output(`${myNumber} != 3.14 = ${myNumber != 3.14}`);
+  output(`${myNumber} === 3.14 = ${myNumber === 3.14}`);
+  output(`${myNumber} !== 3.14 = ${myNumber !== 3.14}`);
+
+  output("--- Logical Operators ---");
+
+  output(`${true} && ${true} = ${true && true}`);
+  output(`${true} && ${false} = ${true && false}`);
+  output(`${false} && ${false} = ${false && false}`);
+
+  output(`${true} || ${true} = ${true || true}`);
+  output(`${true} || ${false} = ${true || false}`);
+  output(`${false} || ${false} = ${false || false}`);
+
+
 }
