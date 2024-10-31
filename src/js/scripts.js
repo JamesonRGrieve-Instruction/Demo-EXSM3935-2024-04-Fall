@@ -53,5 +53,7 @@ async function main() {
   output(`${true} || ${false} = ${true || false}`);
   output(`${false} || ${false} = ${false || false}`);
 
-
+  let userInput = await input("Please enter a number: ");
+  output(`${userInput} is ${userInput < 10 ? "" : "not "}less than 10.`);
+  // expression ? value_if_true : value_if_false
 }
