@@ -6,12 +6,17 @@ async function main() {
   const number = await input("Enter a choice: ");
   if (number === "1" || number === "one") {
     output("Hello");
+    // output("Done");
   } else if (number === "2" || number === "two") {
     output("Goodbye");
+    // output("Done");
   } else {
     output("Invalid choice");
+    // output("Done");
   }
-  
+  output("Done");
+
+
   switch (number) {
     case "one":
     case "1":
