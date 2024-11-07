@@ -3,12 +3,28 @@
 // eslint-disable-next-line no-unused-vars
 async function main() {
   const number = await input("Enter a number: ");
-  if (number > 9) {
-    output("Number is at least two digits");
-    if (number > 99) {
-      output("Number is at least three digits");
-    }
+  if (number > 9 && number < 100) {
+    output("Number is two digits");
   } else {
-    output("Number is less than two digits");
+    if (number > 99) {
+      output("Number is three or more digits");
+    }
+    else
+    {
+      output("Number is one digits");
+    }
   }
+
+  // These two are exactly the same. Due to a syntactic quirk, you can omit the code block if
+  // you have only one statement in an if/else block, allowing you to chain "if" and "else".
+  if (number > 9 && number < 100) {
+    output("Number is two digits");
+  } 
+  else if (number > 99) {
+    output("Number is three or more digits");
+  }
+  else {
+    output("Number is one digits");
+  }
+  
 }
