@@ -3,6 +3,8 @@
 // eslint-disable-next-line no-unused-vars
 async function main() {
   const number = await input("Enter a number: ");
+  output("Number entered: " + number, "debug");
+  output(`number > 9 && number < 100: ${number > 9 && number < 100}`, "debug");
   if (number > 9 && number < 100) {
     output("Number is two digits");
   } else {
