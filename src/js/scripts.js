@@ -2,13 +2,13 @@
 /* global output, input */
 // eslint-disable-next-line no-unused-vars
 async function main() {
-  // This is where the code you're actually experimenting with goes.
-
-  const prompt = "Please enter your name, or 'Exit' to quit: ";
-  let name = await input(prompt);
-
-  while (name !== "Exit") {
-    output("Hello, " + name + "!");
-    name = await input(prompt);
+  const number = await input("Enter a number: ");
+  if (number > 9) {
+    output("Number is at least two digits");
+    if (number > 99) {
+      output("Number is at least three digits");
+    }
+  } else {
+    output("Number is less than two digits");
   }
 }
