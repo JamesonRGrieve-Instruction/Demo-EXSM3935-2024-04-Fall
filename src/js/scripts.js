@@ -2,7 +2,7 @@
 /* global output, input */
 // eslint-disable-next-line no-unused-vars
 async function main() {
-  const myArray = [1, 2, 3];
+  const myArray = ["Hello", "alpha", "Bravo"];
 
   const copyOfMyArray = [...myArray];
 
