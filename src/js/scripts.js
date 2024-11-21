@@ -3,16 +3,18 @@
 // eslint-disable-next-line no-unused-vars
 async function main() {
   const myArray = ["Hello", "alpha", "Bravo"];
+  myArray.push("alpha");
+  const mySet = new Set(myArray);
+  output(Array.from(mySet));
 
-  const copyOfMyArray = [...myArray];
+  mySet.add("Bravo");
 
-  output(copyOfMyArray);
-  myArray.push(4);
-  output(copyOfMyArray);
+  const myEmptySet = new Set();
+  myEmptySet.add("alpha");
+  myEmptySet.add("Bravo");
+  output(Array.from(myEmptySet));
 
-  const combinedArray = myArray.concat(copyOfMyArray);
-  output(combinedArray);
-
-  combinedArray.sort();
-  output(combinedArray);
+  output(mySet.has("alpha"));
+  mySet.delete("alpha");
+  output(mySet.has("alpha"));
 }
