@@ -9,4 +9,10 @@ async function main() {
   output(copyOfMyArray);
   myArray.push(4);
   output(copyOfMyArray);
+
+  const combinedArray = myArray.concat(copyOfMyArray);
+  output(combinedArray);
+
+  combinedArray.sort();
+  output(combinedArray);
 }
