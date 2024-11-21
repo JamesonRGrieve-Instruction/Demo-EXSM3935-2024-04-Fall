@@ -2,27 +2,35 @@
 /* global output, input */
 // eslint-disable-next-line no-unused-vars
 async function main() {
-  let myFirstNumber = 42;
-  let mySecondNumber = myFirstNumber;
+  const myArray = [1, 2, 3];
 
-  output(`My First Number: ${myFirstNumber}`);
-  output(`My Second Number: ${mySecondNumber}`);
+  output(`My Array: ${myArray}`);
 
-  myFirstNumber = myFirstNumber + 10;
+  myArray.push(4);
 
-  output(`My First Number After Addition: ${myFirstNumber}`);
-  output(`My Second Number After Addition: ${mySecondNumber}`);
+  output(`My Array After Push: ${myArray}`);
 
+  output(`Pop: ${myArray.pop()}`);
 
-  const myFirstArray = [1, 2, 3];
-  const mySecondArray = myFirstArray;
+  output(`My Array After Pop: ${myArray}`);
 
-  output(`My First Array: ${myFirstArray}`);
-  output(`My Second Array: ${mySecondArray}`);
+  output(`Pop: ${myArray.pop()}`);
 
-  myFirstArray.push(4);
+  output(`My Array After Pop: ${myArray}`);
 
-  output(`My First Array After Push: ${myFirstArray}`);
-  output(`My Second Array After Push: ${mySecondArray}`);
+  output(`Pop: ${myArray.pop()}`);
 
+  output(`My Array After Pop: ${myArray}`);
+
+  myArray.unshift(0);
+
+  output(`My Array After Unshift: ${myArray}`);
+
+  output(`Shift: ${myArray.shift()}`);
+
+  output(`My Array After Shift: ${myArray}`);
+
+  output(`Shift: ${myArray.shift()}`);
+
+  output(`My Array After Shift: ${myArray}`);
 }
