@@ -3,34 +3,20 @@
 // eslint-disable-next-line no-unused-vars
 async function main() {
   const myArray = [1, 2, 3];
-
+  myArray.push(4);
+  myArray.unshift(0);
   output(`My Array: ${myArray}`);
 
-  myArray.push(4);
+  output(`Length of Array: ${myArray.length}`);
 
-  output(`My Array After Push: ${myArray}`);
+  output(`First Element: ${myArray[0]}`);
+  output(`Last Element: ${myArray[myArray.length - 1]}`);
+  myArray.shift();
+  output(`Last Element (Static): ${myArray[4]}`);
 
-  output(`Pop: ${myArray.pop()}`);
+  output(`My Array Before Splice: ${myArray}`);
+  output(`Index of 2: ${myArray.indexOf(2)}`);
+  myArray.splice(myArray.indexOf(2), 1);
+  output(`My Array After Splice: ${myArray}`);
 
-  output(`My Array After Pop: ${myArray}`);
-
-  output(`Pop: ${myArray.pop()}`);
-
-  output(`My Array After Pop: ${myArray}`);
-
-  output(`Pop: ${myArray.pop()}`);
-
-  output(`My Array After Pop: ${myArray}`);
-
-  myArray.unshift(0);
-
-  output(`My Array After Unshift: ${myArray}`);
-
-  output(`Shift: ${myArray.shift()}`);
-
-  output(`My Array After Shift: ${myArray}`);
-
-  output(`Shift: ${myArray.shift()}`);
-
-  output(`My Array After Shift: ${myArray}`);
 }
