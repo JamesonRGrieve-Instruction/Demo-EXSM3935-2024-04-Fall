@@ -2,20 +2,14 @@
 /* global output, input */
 // eslint-disable-next-line no-unused-vars
 async function main() {
-  const myDictionary = {
-    "a": "Hello", 
-    "b": "alpha", 
-    "c": "Bravo"
-  };
+  const my2DArray = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+  ];
 
-  output(myDictionary["a"]);
 
-  myDictionary["a"] = await input("Please enter a new value: "); // Overwrite a key (works with arrays too).
-  output(myDictionary["a"]);
-  output(myDictionary); // Gives [object Object] which is entirely useless to everyone.
-  output(JSON.stringify(myDictionary)); // Converts the dictionary to JavaScript Object Notation.
-
-  const username = "d";
-  output(Boolean(myDictionary[username]));
-
+  output(my2DArray);
+  output(my2DArray[1]);
+  output(my2DArray[1][1]);
 }
