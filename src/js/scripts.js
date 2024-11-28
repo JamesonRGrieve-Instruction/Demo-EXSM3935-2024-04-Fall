@@ -27,7 +27,12 @@ async function main() {
     output("Turn: " + currentTurn);
     let targetSpace;
     while (targetSpace === undefined || targetSpace > 9 || targetSpace < 1 || gameBoard[targetSpace - 1] !== " ") {
-      targetSpace = Number(await input("Select a space: "));
+      try {
+         targetSpace = Number(await input("Select a space: "));
+      }
+      catch (e) {
+        output("Please enter a number between 1 and 9.");
+      }
     }
     
     gameBoard[targetSpace - 1] = currentTurn;
