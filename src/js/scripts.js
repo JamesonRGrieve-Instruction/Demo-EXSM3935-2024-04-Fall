@@ -25,7 +25,7 @@ async function main() {
         name = await input(prompt);
       } while (name !== "Exit");
     } 
-    // For Loop
+    // For Loop (Condensed While Loop)
     else if (userInput === "3") {
       for (let myNumber = 0 /* Initialize */; myNumber < 10 /* Test */; myNumber++ /* Modify */) {
         output(myNumber); // Process
@@ -34,10 +34,31 @@ async function main() {
       for (let name = await input(prompt); name !== "Exit"; name = await input(prompt)) {
         output(`Hello, ${name}!`);
       }
-    } 
-    // For-Of Loop
-    else if (userInput === "4") {
 
+      const myArray = [1, 3, 7, 12, 25, 42, 99];
+      for (let index = 0; index < myArray.length; index++) {
+        output(myArray[index]);
+      }
+    } 
+    // For-Of Loop (Condensed For Loop)
+    else if (userInput === "4") {
+      const myArray = [1, 3, 7, 12, 25, 42, 99];
+      for (let element of myArray) {
+        output(element);
+      }
+
+      const my2DArray = [
+        [1, 3, 7],
+        [12, 25, 42],
+        [99, 101, 250]
+      ];
+
+      for (let row of my2DArray) {
+        output("-New Row-")
+        for (let columnElement of row) {
+          output(columnElement);
+        }
+      }
     }
   } while (userInput !== "5");
 }
