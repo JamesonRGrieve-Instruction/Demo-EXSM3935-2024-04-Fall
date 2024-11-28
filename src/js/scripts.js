@@ -14,8 +14,6 @@ async function main() {
   ];
   let currentTurn = "X";
 
-
-
   let winner = null;
   do {
     let outputString = "";
@@ -27,13 +25,20 @@ async function main() {
 
     output("1 | 2 | 3\n4 | 5 | 6\n7 | 8 | 9");
     output("Turn: " + currentTurn);
-    const targetSpace = Number(await input("Select a space: "));
+    let targetSpace;
+    while (targetSpace === undefined || targetSpace > 9 || targetSpace < 1 || gameBoard[targetSpace - 1] !== " ") {
+      targetSpace = Number(await input("Select a space: "));
+    }
+    
     gameBoard[targetSpace - 1] = currentTurn;
 
     for (let line of lines) {
       if (gameBoard[line[0]] === gameBoard[line[1]] && gameBoard[line[1]] === gameBoard[line[2]] && gameBoard[line[0]] !== " ") {
         winner = gameBoard[line[0]];
       }
+    }
+    if (!winner && !gameBoard.includes(" ")) {
+      winner = "Draw";
     }
 
     currentTurn = currentTurn === "X" ? "O" : "X";
