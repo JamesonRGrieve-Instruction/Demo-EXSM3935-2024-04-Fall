@@ -37,7 +37,7 @@ async function main() {
         output("Valid year.");
       }
     } else if (menuChoice === "4") {
-      output("Date Checker");
+      output(new Date(await input("Enter a date: ")).toString() !== "Invalid Date" ? "Valid date." : "Invalid date!");
     }
   } while (menuChoice !== "5");
 }
