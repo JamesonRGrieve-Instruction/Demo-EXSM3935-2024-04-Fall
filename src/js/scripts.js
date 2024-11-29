@@ -6,7 +6,7 @@ async function main() {
     [1234, "Apple", 0.75],
     [1235, "Orange", 0.99]
   ];
-  const receipt = [];
+  const receipt = {};
   let total = 0;
   let chosenItem = "";
   do {
@@ -19,7 +19,12 @@ async function main() {
       let found = false;
       for (let item of inventory) {
         if (item[0] === Number(chosenItem)) {
-          receipt.push(item[1]);
+          if (!receipt[item[1]]) {
+            receipt[item[1]] = 1;
+          }
+          else {
+            receipt[item[1]] += 1;
+          }
           total += item[2];
           found = true;
         }
@@ -30,7 +35,9 @@ async function main() {
     }
   } while (chosenItem !== "END");
 
-  output(`Receipt: ${receipt.join(", ")}`);
+  for (let item in receipt) {
+    output(`x${receipt[item]}: ${item}`);
+  }
   output(`Total: $${total.toFixed(2)}`);
 }
 
