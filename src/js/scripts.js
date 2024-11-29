@@ -21,9 +21,21 @@ async function main() {
       }
       output(valid ? "Valid string." : "Invalid string!");
     } else if (menuChoice === "2") {
-      output("Integer Checker");
+      let valid = true;
+      for (letter of await input("Enter an integer: ")) {
+        if (isNaN(letter)) {
+          valid = false;
+        }
+      }
+      output(valid ? "Valid integer." : "Invalid integer!");
     } else if (menuChoice === "3") {
-      output("Year Checker");
+      const year = await input("Enter a year: ");
+      if (isNaN(year) || year < 1900 || year > (new Date()).getFullYear()) {
+        output("Invalid year!");
+      }
+      else {
+        output("Valid year.");
+      }
     } else if (menuChoice === "4") {
       output("Date Checker");
     }
