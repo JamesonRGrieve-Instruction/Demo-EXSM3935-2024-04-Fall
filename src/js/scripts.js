@@ -10,7 +10,16 @@ async function main() {
     output("1. String Checker\n2. Integer Checker\n3. Year Checker\n4. Date Checker\n5. Exit");
     menuChoice = (await input("Enter your choice: ")).trim();
     if (menuChoice === "1") {
-      output("String Checker");
+      let valid = true;
+      // This is a *more* maintainable but *less* efficient solution. 
+      // This is because we check every letter, even after we encounter a number, which is redundant.
+      // To improve this efficiency-wise, we could use a while/for loop instead of a for-of loop, and add a "&& valid" to the condition.
+      for (letter of await input("Enter a string: ")) {
+        if (!isNaN(letter)) {
+          valid = false;
+        }
+      }
+      output(valid ? "Valid string." : "Invalid string!");
     } else if (menuChoice === "2") {
       output("Integer Checker");
     } else if (menuChoice === "3") {
