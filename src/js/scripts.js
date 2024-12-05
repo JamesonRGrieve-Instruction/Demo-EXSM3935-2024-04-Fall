@@ -9,7 +9,7 @@ async function main() {
   output(`You are ${age} years old.`);
 }
 
-function calculateAgeFromBirthYear(birthYear, birthMonth, birthDay) {
+function calculateAgeFromBirthYear(birthYear = "1970", birthMonth = "01", birthDay = "01") {
   return ((new Date()) - new Date(birthYear, birthMonth, birthDay)) / 1000 / 60 / 60 / 24 / 365.25;
 }
 
