@@ -9,7 +9,10 @@ async function main() {
   output(`You are ${age} years old.`);
 }
 
-function calculateAgeFromBirthYear(birthYear = "1970", birthMonth = "01", birthDay = "01") {
+function calculateAgeFromBirthYear(birthYear, birthMonth, birthDay) {
+  if (birthYear.toString().trim() === "" || birthMonth.toString().trim() === "" || birthDay.toString().trim() === "") {
+    throw new Error('You must provide a birth year, month, and day.');
+  }
   return ((new Date()) - new Date(birthYear, birthMonth, birthDay)) / 1000 / 60 / 60 / 24 / 365.25;
 }
 
