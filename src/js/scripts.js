@@ -2,13 +2,20 @@
 /* global output, input */
 // eslint-disable-next-line no-unused-vars
 async function main() {
-  // This is where the code you're actually experimenting with goes.
-
-  const prompt = "Please enter your name, or 'Exit' to quit: ";
-  let name = await input(prompt);
-
-  while (name !== "Exit") {
-    output("Hello, " + name + "!");
-    name = await input(prompt);
-  }
+  let userInput;
+  do {
+    output("a. Play Game\nb. High Scores\nc. Exit")
+    userInput = (await input("Please enter your choice: ")).trim().toLowerCase();
+    if (["a", "b", "c"].includes(userInput)) {
+      if (userInput === "a") {
+        output("Play Game")
+      }
+      else if (userInput === "b") {
+        output("High Scores")
+      }
+    }
+    else {
+      output("Invalid choice. Please try again.")
+    }
+  } while (userInput !== "c")
 }
